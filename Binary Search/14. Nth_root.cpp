@@ -1,4 +1,6 @@
 // to find the nth root of a number
+// Expected Time Complexity: O(log n)
+// Expected Space Complexity: O(1)
 #include <bits/stdc++.h>
 using namespace std;
 
