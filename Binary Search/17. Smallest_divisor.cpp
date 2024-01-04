@@ -21,7 +21,7 @@ int sd(vector<int>& nums, int threshold){
   // the search space would be from 1 to max(nums);
   int l = 1, h = *max_element(nums.begin(), nums.end());
   // naive approach
-  // // just iterate over the search space and check which is the smallest one and return it
+  // just iterate over the search space and check which is the smallest one and return it
   // for(int i = l; i <= h; ++i){
   //   if(quo_sum(nums, i) <= threshold)
   //     return i;
