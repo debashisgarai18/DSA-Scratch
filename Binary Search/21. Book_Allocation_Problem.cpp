@@ -20,6 +20,8 @@ int func(vector<int> arr, int pages){
 // to find the min pages assigned
 int min_pages(vector<int> arr, int s){
   // the search space is => max(arr) to sum(arr)
+  // the lowest page cannot be less than the max, coz there is no point of starting search space from 1
+  // and the highest page cannot exceed the sum of all element...
   int l = *max_element(arr.begin(), arr.end());
   int h = accumulate(arr.begin(), arr.end(), 0);
 
@@ -46,6 +48,5 @@ int main() {
   vector<int> arr = {12, 34, 67, 90};
   int s = 2;
   cout << "The max pages assigned i.e. min is:" << min_pages(arr, s) << endl;
-
   return 0;
 }
