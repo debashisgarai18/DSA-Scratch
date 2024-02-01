@@ -14,7 +14,7 @@ int lBound(vector<int>& vv, int n, int target){
   return l;
 }
 int funct(vector<vector<int>>& arr, int n, int m){
-  // naive solution
+  // naive solution -->
   // just iterate over the row and count the sum 
   // the one which is greater return that
   // int mx = -1, idx = -1;
@@ -31,7 +31,7 @@ int funct(vector<vector<int>>& arr, int n, int m){
   // return idx;
 
   // this will take the TC of O(n * m)
-  // optimised approah : BS
+  // optimised approach : BS
   // apply BS on every row and find the lower bound of 1
   // return the row with max val of (m - lowerBound(1))
   int mx_cnt = 0, idx = -1;
@@ -43,7 +43,7 @@ int funct(vector<vector<int>>& arr, int n, int m){
     }
   }
   return idx;
-  
+  // The TC here will be : n * log m
 }
 int main() {
   vector<vector<int>>vv = {{0, 1, 1}, {1,1,1}, {0, 0, 1}};
