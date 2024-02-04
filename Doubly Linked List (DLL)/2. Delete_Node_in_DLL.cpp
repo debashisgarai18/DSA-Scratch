@@ -107,6 +107,26 @@ Node* delKElem(Node* head, int k){
   return head;
 }
 
+// delete the node K from the DLL
+// condition : we cannot delete the head 
+void deleteKNode(Node* temp){
+  Node* prev = temp -> back;
+  Node* front = temp -> next;
+
+  // condiiton if the k node is the last node
+  if(front == nullptr){
+    prev -> next = nullptr;
+    temp -> back = nullptr;
+    delete temp;
+  } 
+
+  prev -> next = front;
+  front -> back = prev;
+
+  temp -> next = temp -> back = nullptr;
+  delete temp;
+}
+
 // to print the vals
 void print(Node* head){
   while(head != NULL){
@@ -120,7 +140,8 @@ int main() {
   Node* head = convert_arr2DLL(vv);
   // head = deleteHead(head); // to delete Head of DLL
   // head = deleteTail(head); // to delete Tail of DLL
-  head = delKElem(head, 3);
+  // head = delKElem(head, 3); // to delete kth element
+  deleteKNode(head -> next -> next); // to delete the k node
   print(head);
   return 0;
 }
